@@ -1,0 +1,10 @@
+#containerGame{
+    position: absolute;
+    top:10%;
+    right: 5%;
+    width: 80%;
+    height: 80%;
+    background:black;
+    color:#a4f644;
+    opacity: 0.8;
+}

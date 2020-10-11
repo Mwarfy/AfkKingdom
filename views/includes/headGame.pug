@@ -1,0 +1,23 @@
+html
+    block head
+        styles
+            link(rel="stylesheet" type="text/css" href="/navGame.css")
+        script(src='https://code.jquery.com/jquery-3.3.1.min.js')
+        script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous")
+    body
+        ul(id='gameNav')
+            li
+                form(method='get', action='/logout')
+                    button(type='submit') LOGOUT
+            li
+                a(href='/game' id='game')
+                    p Game
+            li
+                a(href='/compte' id='compte')
+                    p Compte
+            li 
+                a(href='/personnages' id='personnages')
+                    p Personnages
+            li
+                a(href='/classement' id='classement')
+                    p Classement

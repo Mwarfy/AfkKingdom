@@ -1,0 +1,22 @@
+include includes/head.pug
+link(rel="stylesheet" href="/containerAccueil.css")
+div(id='containerAccueil')
+	div
+	form(action='/signin', method='post')
+		ul
+			li
+				h3 SIGNIN
+				if tab
+						p.red=tab
+			li
+				label USERNAME:
+			li
+				input(type='text' name='username' id='username')
+			li
+				label PASSWORD:
+			li
+				input(type='password' name='password' id='password')
+			li
+				button(type='submit' value='Submit') submit
+script.
+	$("#signin div").css('background', '#242424')

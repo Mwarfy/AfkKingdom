@@ -1,0 +1,30 @@
+include includes/head.pug
+link(rel="stylesheet" href="/containerAccueil.css")
+div(id='containerAccueil')
+    div
+    form(action='/signup' method='post')
+        ul
+            li
+                h3 SIGNUP
+            li
+                label USERNAME:
+                if tab
+                    p.red=tab.errorUsername
+            li
+                input(type='text' name='username')
+            li
+                label PASSWORD:
+                if tab
+                    p.red=tab.errorPassword
+            li
+                input(type='password' name='password')
+            li
+                label E MAIL :
+                if tab
+                    p.red=tab.errorEmail
+            li
+                input(type='text' name='email')
+            li
+                button(type='submit') submit
+script.
+    $("#signup div").css('background','#242424')

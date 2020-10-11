@@ -1,0 +1,124 @@
+#containerPerso{
+    border:1px solid #a4f644;
+    width: 100%;
+    height: 100%;
+}
+#containerPerso div{
+    width: 100%;
+    height: 90%;
+}
+#navPerso{
+    display:flex;
+    list-style-type:none;
+    width: 100%;
+    height: 10%;
+}
+#navPerso li{
+    border: 1px solid #a4f644;
+    display:flex;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+}
+#navPerso li:hover{
+    background-color:#363636;
+    transition-duration:1s;
+    cursor:pointer;
+}
+#createPerso{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+#createPerso form{
+    width: 100%;
+    height: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+#createPerso ul{
+    list-style-type: none;
+    display:flex;
+    flex-direction:column;
+    width: 80%;
+    height: 80%;
+}
+#createPerso li{
+    height: 10%;
+}
+#createPerso label{
+    font-size:20px;
+}
+#createPerso input{
+    padding-left: 8px;
+    caret-color: #a4f644;
+    border-color: #a4f644;
+    border-radius: 20px;
+    background:black;
+    color:#a4f644;
+    font-size:20px;
+}
+#createPerso input:focus{
+    outline: none;
+}
+#createPerso button{
+    width: 18%;
+    height: 62%;
+    font-size:20px;
+    border: 1px solid #a4f644;
+    color: #a4f644;
+    background-color: black;
+}
+#gender, #race{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: 1px solid #a4f644;
+}
+#gender{
+    height: 12%!important;
+}
+#race{
+    height: 15%!important;
+}
+#gender div, #race div{
+    display:flex;
+    align-items:center;
+}
+#gender div{
+    width:33%;
+    height: 50%;
+}
+#race div{
+    width: 33%;
+    height: 33%;
+}
+#gender div p, #race div p{
+    width: 50%;
+}
+.flex{
+    display:flex;
+    align-items: center;
+}
+#listPerso ul{
+    list-style-type:none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#listPerso li{
+    display:flex;
+    align-items: center;
+    border-bottom: 1px solid #a4f644;
+    width: 100%;
+    height: 10%;
+}
+#listPerso li p{
+    margin-left: 20px;
+}
+#errorPerso, #errorPseudo, #errorGender, #errorRace{
+    color:red;
+}

@@ -1,0 +1,107 @@
+include includes/headGame.pug
+link(rel="stylesheet" type="text/css" href="/containerGame.css")
+link(rel="stylesheet" type="text/css" href="/containerPerso.css")
+div(id='containerGame')
+    div(id='containerPerso')
+        ul(id='navPerso')
+            li(id='show')
+                h1 Personnages
+            li(id='show1')
+                h1 Create
+        div(id='listPerso')
+            ul
+        div(id='createPerso')
+            form(method='post' action='/personnages')
+                ul
+                    li.flex
+                        label Pseudo:
+                        input(type='text' name='pseudo' id='pseudo')
+                        p(id='errorPseudo')
+                    li.flex
+                        label Gender:
+                    li(id='gender')
+                        p(id='errorGender')
+                            div
+                                p Male
+                                input(type='radio' name='gender' value='male')
+                            div
+                                p Female
+                                input(type='radio' name='gender' value='female')
+                    li.flex
+                        label Race:
+                    li(id='race')
+                        p(id='errorRace')
+                        div
+                            p Human
+                            input(type='radio' name='race' value='human')
+                        div
+                            p Dwarf
+                            input(type='radio' name='race' value='dwarf')
+                        div
+                            p Orc
+                            input(type='radio' name='race' value='orc')
+                        div
+                            p Undead
+                            input(type='radio' name='race' value='undead')
+                        div
+                            p Night Elf
+                            input(type='radio' name='race' value='elf')
+                    li.flex
+                        button(type='submit') submit            
+script.
+    let tab = !{JSON.stringify(tab)}
+    let error = !{JSON.stringify(error)}
+    $('#personnages').css('background', '#363636')
+    if(error){
+    if(error.errorPseudo != 'OK' || error.errorPerso != 'OK' || error.errorGender != 'OK' || error.errorRace != 'OK'){
+        let p = ''
+        if(error.errorPseudo != 'OK')
+            $('#errorPseudo').empty().append(error.errorPseudo+'')
+        if(error.errorPerso != 'OK')
+            $('#errorPerso').empty().append(error.errorPerso+'')
+        if(error.errorGender != 'OK')
+            $('#errorGender').empty().append(error.errorGender+'')
+        if(error.errorRace != 'OK')
+            $('#errorRace').empty().append(error.errorRace+'')
+        $('#listPerso').hide()
+        $('#createPerso').show()
+        $('#show1').css('background', '#363636')
+    }
+    else
+    {
+        $('#listPerso').show()
+        $('#createPerso').hide()
+        $('#show').css('background','#363636')
+    }}
+    $('#show').click(function(){
+        $('#createPerso').hide()
+        $('#listPerso').show()
+        $('#show1').css('background', 'black')
+        $('#show').css('background', '#363636')
+    })
+    $('#show1').click(function(){
+        $('#listPerso').hide()
+        $('#createPerso').show()
+        $('#show').css('background', 'black')
+        $('#show1').css('background', '#363636')
+    })
+    if(tab.length > 0){
+        let i = 0
+        let li = ''
+        while(i < tab[0].perso.length){
+            li += '<li>'
+            li += '<p>Pseudo: '+tab[0].perso[i].pseudo+'</p>'
+            li += '<p>Gender: '+tab[0].perso[i].gender+'</p>'
+            li += '<p>Race: '+tab[0].perso[i].race+'</p>'
+            li += '<p>Force: '+tab[0].perso[i].stats.force+'</p>'
+            li += '<p>Agility: '+tab[0].perso[i].stats.agility+'</p>'
+            li += '<p>Dexterity: '+tab[0].perso[i].stats.dexterity+'</p>'
+            li += '<p>Intelligence: '+tab[0].perso[i].stats.intelligence+'</p>'
+            li += '<p>Sagesse: '+tab[0].perso[i].stats.sagesse+'</p>'
+            li += '<p>Level:'+tab[0].perso[i].stats.level+'</p>'
+            li += '<p>xp: '+tab[0].perso[i].stats.xp+'</p>'
+            i++
+        }
+        $('#listPerso ul').empty().append(li)
+    }
+
