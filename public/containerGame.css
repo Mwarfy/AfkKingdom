@@ -1,10 +1,20 @@
 #containerGame{
     position: absolute;
-    top:10%;
-    right: 5%;
-    width: 80%;
-    height: 80%;
+    left:12.5%;
+    width: 85%;
+    height: 90%;
     background:black;
     color:#a4f644;
-    opacity: 0.8;
+    opacity: 0.9;
+}
+.table{
+    width: 100%;
+    height: 100%;
+}
+.table-bordered td, .table-bordered th {
+    border: 1px solid #a4f644;
+}
+.table-bordered td:hover{
+    background-color:white;
+    cursor:pointer;
 }

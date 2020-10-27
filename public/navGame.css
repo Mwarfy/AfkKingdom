@@ -5,6 +5,9 @@ html, body{
     width: 100%;
     background-image: url('game.jpg');
 }
+p{
+    margin: 0 !important;
+}
 body{
     display:flex;
     align-items:center;
